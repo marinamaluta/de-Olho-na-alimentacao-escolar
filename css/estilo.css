@@ -1,4 +1,6 @@
 
+/* Início do estilo geral do body */
+
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -69,6 +71,7 @@ h6 {
   border-color: #f6bf01;
 }
 .btn-primary:active,
+
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   background-image: none;
@@ -105,6 +108,7 @@ fieldset[disabled] .btn-primary.active {
   border-radius: 3px;
   font-size: 18px;
   padding: 20px 40px;
+  transition: 0.2s;
 }
 .btn-xl:hover,
 .btn-xl:focus,
@@ -142,6 +146,9 @@ fieldset[disabled] .btn-xl.active {
   color: #fed136;
   background-color: white;
 }
+/* Final do estilo geral do body */
+
+/* Inicio do estilo navbar */
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
@@ -186,12 +193,12 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
-  color: white;
+  color: #403c23;
   background-color: #fed136;
 }
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
-  color: white;
+  color: #403c23;
   background-color: #fec503;
 }
 
@@ -199,7 +206,22 @@ img.padrao{
   height: 195.5px;
   width: 390px;
 }
+.foto-cardapio {
+  height:inherit;
+  border-radius: 50%;
+}
+.a-personalizado {
+  color:#004d1a;
+  font-size: 14px;
+}
 
+.img-responsive.padrao{
+  object-fit: cover;
+}
+
+/* Final do estilo navbar padrão */
+
+/* Inicio do modo resposivo */
 @media (min-width: 768px) {
   .navbar-custom {
     background-color: transparent;
@@ -253,6 +275,7 @@ header .intro-text .intro-lead-in {
   margin-bottom: 5px;
   text-shadow: 1px 1px #fec503;
   background-color: #fec503;
+  padding: 20px 0;
 }
 header .intro-text .intro-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -303,7 +326,8 @@ section h3.section-subheading {
   font-weight: 400;
   font-style: italic;
   margin-bottom: 75px;
-  
+  line-height: 1.5;
+
 }
 
 section h3.section-subheading-contato{
@@ -313,9 +337,11 @@ section h3.section-subheading-contato{
   font-weight: 400;
   font-style: italic;
   margin-bottom: 75px;
-  color: white;
+  color: #403c23;
   background-color: #fec503;
+  padding: 20px 0;
 }
+
 
 @media (min-width: 768px) {
   section {
@@ -380,7 +406,7 @@ section h3.section-subheading-contato{
 #portfolio .portfolio-item .portfolio-caption p {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;
 }
 #portfolio * {
@@ -607,25 +633,25 @@ section#contact .form-control:focus {
 section#contact ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   color: #eeeeee;
 }
 section#contact :-moz-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   color: #eeeeee;
 }
 section#contact ::-moz-placeholder {
    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   color: #eeeeee;
 }
 section#contact :-ms-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   color: #eeeeee;
 }
 section#contact .text-danger {
@@ -676,6 +702,10 @@ ul.social-buttons li a:active {
 .btn:active:focus {
   outline: none;
 }
+
+/* Final do modo responsivo */
+
+/* Início do estilo modal */
 .portfolio-modal .modal-dialog {
   margin: 0;
   height: 100%;
@@ -730,9 +760,7 @@ ul.social-buttons li a:active {
   background-color: #222222;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  /* IE 9 */
   -webkit-transform: rotate(45deg);
-  /* Safari and Chrome */
   z-index: 1051;
 }
 .portfolio-modal .close-modal .lr .rl {
@@ -765,22 +793,10 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #fed136;
 }
-/* personalização */
-.foto-cardapio {
-  height:inherit;
-  border-radius: 50%;
-}
 
-.a-personalizado {
-  color:#004d1a;
-  font-size: 14px;
-}
+/* Final do estilo modal */
 
 /* Inicio Formulário */
-
-
-
-/* vertical */
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
@@ -788,14 +804,15 @@ body {
   border-color: #ddddd;
 }
 
+/* valido */
 .form-group input:valid,
 .form-group textarea:valid {
   border: 2px solid green;
 }
 
 /* invalido */
-.form-group input:invalid,
-.form-group textarea:invalid {
+.form-group:not(.nao-toquei) input:invalid,
+.form-group:not(.nao-toquei) textarea:invalid {
   border: 2px solid red;
 }
 
